@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>My First Webpage</title>
+  </head>
+  <body>
+    <h1>I love coffee</h1>
+    <p>Hello world!</p>
+  </body>
+
+  <img src="coffee.jpg" width="500" />
+
+  <!-- CORS demo -->
+  <div id="tofetch" />
+  <script>
+    var tofetch = document.getElementById("tofetch");
+
+    fetch(
+      "https://s3.eu-central-1.amazonaws.com/demo-rietta-lab13-target.com/extra-page.html"
+    )
+      .then((response) => {
+        return response.text();
+      })
+      .then((html) => {
+        tofetch.innerHTML = html;
+      });
+  </script>
+</html>
